@@ -1,0 +1,34 @@
+[project]
+name = "drawio-to-images"
+version = "0.1.0"
+description = "Render .drawio files to SVG, PNG, PDF or JPG via a headless drawio backend"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Hajar Razip" }]
+keywords = ["drawio", "diagrams", "svg", "png", "export", "cli"]
+dependencies = []
+
+[project.optional-dependencies]
+watch = ["watchfiles>=0.21"]
+
+[project.scripts]
+drawio-export = "drawio_export.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mshajarrazip/drawio-to-images"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/drawio_export"]
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q"

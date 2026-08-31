@@ -1,0 +1,15 @@
+- id: drawio-export
+  name: drawio-export (render changed diagrams)
+  description: Render .drawio files to images before commit.
+  entry: drawio-export
+  language: python
+  files: \.drawio$
+  pass_filenames: false
+
+- id: drawio-export-check
+  name: drawio-export check (fail if images are stale)
+  description: Fail the commit if any diagram's image is out of date.
+  entry: drawio-export check
+  language: python
+  files: \.drawio$
+  pass_filenames: false
