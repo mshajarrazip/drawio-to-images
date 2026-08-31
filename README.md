@@ -15,8 +15,8 @@ and re-renders a diagram <i>only</i> when its source (or the render options) act
 [![Powered by uv](https://img.shields.io/badge/powered%20by-uv-de5fe9.svg?style=for-the-badge&logo=astral&logoColor=white)](https://docs.astral.sh/uv/)
 [![Docker backend](https://img.shields.io/badge/backend-Docker-2496ed.svg?style=for-the-badge&logo=docker&logoColor=white)](#-backends)
 
+[![CI](https://github.com/mshajarrazip/drawio-to-images/actions/workflows/ci.yml/badge.svg?event=pull_request)](https://github.com/mshajarrazip/drawio-to-images/actions/workflows/ci.yml)
 [![diagrams as code](https://img.shields.io/badge/diagrams-drawio--desktop%20v1.61.0-f08705.svg?style=flat-square)](https://www.drawio.com/)
-[![CI friendly](https://img.shields.io/badge/CI-check%20mode%20%E2%9C%94-brightgreen.svg?style=flat-square)](#-ci-friendly)
 [![pre-commit](https://img.shields.io/badge/pre--commit-hook%20included-fab040.svg?style=flat-square&logo=pre-commit&logoColor=white)](#-installation)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-ff69b4.svg?style=flat-square)](#-roadmap)
 
