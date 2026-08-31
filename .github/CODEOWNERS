@@ -1,0 +1,7 @@
+# Code owners for drawio-to-images.
+# Docs: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Order matters: the last matching pattern wins.
+
+# Everything, unless overridden below.
+*       @mshajarrazip
