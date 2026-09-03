@@ -73,12 +73,12 @@ uvx --from git+https://github.com/mshajarrazip/drawio-to-images drawio-export
 
 ```mermaid
 flowchart LR
-    A[📁 diagrams/**.drawio] --> B{🧠 cache<br/>sha256 + options}
-    B -- unchanged --> S[⏭️ skip]
-    B -- changed / missing / --force --> C[🎬 render plan]
-    C --> D{{🐳 Docker  ·  💻 local drawio}}
-    D --> E[🖼️ imgs/**.svg .png .pdf .jpg]
-    E --> F[💾 update cache.json]
+    A["📁 diagrams/**.drawio"] --> B{"🧠 cache<br/>sha256 + options"}
+    B -->|unchanged| S["⏭️ skip"]
+    B -->|"changed · missing · force"| C["🎬 render plan"]
+    C --> D{{"🐳 Docker · 💻 local drawio"}}
+    D --> E["🖼️ imgs/**.svg .png .pdf .jpg"]
+    E --> F["💾 update cache.json"]
 
     style A fill:#2a0f4d,stroke:#3ad0ff,color:#fff
     style B fill:#1b1035,stroke:#ffc371,color:#fff
@@ -285,11 +285,11 @@ timeout = "45s"
 
 ```mermaid
 flowchart TD
-    Q[--backend auto] --> R{drawio on PATH?}
-    R -- yes --> L[💻 local<br/>drawio --export ...]
-    R -- no --> K{docker usable?}
-    K -- yes --> DK[🐳 Docker<br/>rlespinasse/drawio-desktop-headless]
-    K -- no --> X[❌ discovery/list/check only<br/>no rendering]
+    Q["--backend auto"] --> R{"drawio on PATH?"}
+    R -->|yes| L["💻 local<br/>drawio --export ..."]
+    R -->|no| K{"docker usable?"}
+    K -->|yes| DK["🐳 Docker<br/>rlespinasse/drawio-desktop-headless"]
+    K -->|no| X["❌ discovery/list/check only<br/>no rendering"]
 
     style Q fill:#1b1035,stroke:#ffc371,color:#fff
     style R fill:#2a0f4d,stroke:#3ad0ff,color:#fff
@@ -320,11 +320,11 @@ a signature of the render options, the output paths, and a timestamp.
 
 ```mermaid
 flowchart LR
-    src[source bytes changed?] --> re
+    src["source bytes changed?"] --> re
     opt["option in signature changed?<br/>(formats, scale, width, height,<br/>border, transparent, quality,<br/>page-index, flatten)"] --> re
-    out[expected output missing?] --> re
-    force[--force passed?] --> re
-    re{{♻️ re-render}}
+    out["expected output missing?"] --> re
+    force["--force passed?"] --> re
+    re{{"♻️ re-render"}}
 
     style re fill:#2a0f4d,stroke:#ff5f6d,color:#fff
     style src fill:#1b1035,stroke:#3ad0ff,color:#fff
@@ -382,18 +382,18 @@ diagrams/a/b/foo.drawio
 
 ```mermaid
 flowchart TD
-    cli[cli.py<br/>argparse · sub-commands · exit codes] --> config[config.py<br/>pyproject / toml loader]
-    cli --> discovery[discovery.py<br/>source walk · target resolution]
-    cli --> render[render.py<br/>plans · --jobs · results]
-    discovery --> outputs[outputs.py<br/>source → output path]
-    render --> cache[cache.py<br/>cache.json · hashing · staleness]
-    render --> backends[backends/]
-    backends --> base[base.py<br/>RenderRequest · shared CLI args]
-    backends --> docker[docker.py<br/>stock headless image]
-    backends --> local[local.py<br/>local drawio binary]
-    cli --> doctor[doctor.py<br/>environment diagnostics]
-    cli --> scaffold[scaffold.py<br/>init template]
-    cli --> watch[watch.py<br/>watch loop · optional extra]
+    cli["cli.py<br/>argparse · sub-commands · exit codes"] --> config["config.py<br/>pyproject / toml loader"]
+    cli --> discovery["discovery.py<br/>source walk · target resolution"]
+    cli --> render["render.py<br/>plans · jobs · results"]
+    discovery --> outputs["outputs.py<br/>source → output path"]
+    render --> cache["cache.py<br/>cache.json · hashing · staleness"]
+    render --> backends["backends/"]
+    backends --> base["base.py<br/>RenderRequest · shared CLI args"]
+    backends --> docker["docker.py<br/>stock headless image"]
+    backends --> local["local.py<br/>local drawio binary"]
+    cli --> doctor["doctor.py<br/>environment diagnostics"]
+    cli --> scaffold["scaffold.py<br/>init template"]
+    cli --> watch["watch.py<br/>watch loop · optional extra"]
 
     style cli fill:#2a0f4d,stroke:#ffc371,color:#fff
     style backends fill:#1b1035,stroke:#8a2be2,color:#fff
